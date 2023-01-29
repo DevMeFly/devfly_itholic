@@ -12,5 +12,8 @@
   "files.encoding": "utf8",
   "cSpell.language": "en,lorem",
   "cSpell.enableFiletypes": ["dotenv", "log", "tailwindcss"],
-  "cSpell.words": ["commitlint", "tailwindcss"]
+  "cSpell.words": ["commitlint", "tailwindcss"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
