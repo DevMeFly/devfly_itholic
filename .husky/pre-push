@@ -13,3 +13,5 @@ npm run build ||
     '
     false;
 )
+
+echo '✅✅✅✅ Good job, you win this time... I am pushing this now. ✅✅✅✅'
