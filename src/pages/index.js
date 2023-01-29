@@ -1,3 +1,10 @@
+import AddIcon from '@mui/icons-material/Add'
+import EditIcon from '@mui/icons-material/Edit'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import NavigationIcon from '@mui/icons-material/Navigation'
+import Box from '@mui/material/Box'
+import Fab from '@mui/material/Fab'
+import { StyledEngineProvider } from '@mui/material/styles'
 import { Inter } from '@next/font/google'
 import Head from 'next/head'
 
@@ -13,9 +20,23 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className=''>
-        <h1 className='p-4 pt-2 text-3xl font-bold text-red-500 underline'>
-          Hello world!
-        </h1>
+        <StyledEngineProvider injectFirst>
+          <Box sx={{ '& > :not(style)': { m: 1 } }}>
+            <Fab className='bg-blue-700 hover:bg-red-600' aria-label='add'>
+              <AddIcon />
+            </Fab>
+            <Fab aria-label='edit'>
+              <EditIcon />
+            </Fab>
+            <Fab variant='extended'>
+              <NavigationIcon sx={{ mr: 1 }} />
+              Navigate
+            </Fab>
+            <Fab disabled aria-label='like'>
+              <FavoriteIcon />
+            </Fab>
+          </Box>
+        </StyledEngineProvider>
       </main>
     </>
   )
