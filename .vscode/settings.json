@@ -15,5 +15,6 @@
   "cSpell.words": ["commitlint", "tailwindcss"],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "docwriter.style": "JSDoc"
 }
