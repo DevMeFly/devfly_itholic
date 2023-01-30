@@ -5,10 +5,7 @@ import NavigationIcon from '@mui/icons-material/Navigation'
 import Box from '@mui/material/Box'
 import Fab from '@mui/material/Fab'
 import { StyledEngineProvider } from '@mui/material/styles'
-import { Inter } from '@next/font/google'
 import Head from 'next/head'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
