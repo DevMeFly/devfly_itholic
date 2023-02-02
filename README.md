@@ -25,6 +25,18 @@ dotenv -e .env.local -- npx prisma db push
 
 #or to truncate all tables
 dotenv -e .env.local -- npx prisma migrate reset
+
+#Functionalities:
+
+#5 : Login + sign up (pages) ---------------------------------------------------------------> Nada
+#2 : All courses page ---> #4 --------------------------------------------------------------> Maddouch
+#3 : Categories page(courses(component) + roadmap (component)) (page) ----> #4 -------------> Maddouch
+#4 : (Udemy example)Course details + competences + basic knowledge (page) ----> #6 ---------> Nada
+#9 : Profile page + enrolled in courses ----------------------------------------------------> Nada
+#7 : Quiz page -----------------------------------------------------------------------------> Maddouch
+#6 : Course dashboard (page) ---------------------------------------------------------------> Maddouch
+#8 : Certificate component (option)
+#1 : Home page
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
