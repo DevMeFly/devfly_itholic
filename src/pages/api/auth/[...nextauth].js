@@ -1,20 +1,11 @@
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import NextAuth from 'next-auth'
 import DiscordProvider from 'next-auth/providers/discord'
-import EmailProvider from 'next-auth/providers/email'
 import GitHubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
-import prisma from '../../../../lib/prismadb'
 
 export default NextAuth({
   // Include user.id on session
   callbacks: {
-    session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id
-      }
-      return session
-    },
     async signIn({ account, profile }) {
       if (account.provider === 'google') {
         return profile.email_verified && profile.email.endsWith('@gmail.com')
@@ -23,13 +14,12 @@ export default NextAuth({
     },
   },
 
-  adapter: PrismaAdapter(prisma),
   providers: [
-    EmailProvider({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM,
-      maxAge: 10 * 60,
-    }),
+    // EmailProvider({
+    //   server: process.env.EMAIL_SERVER,
+    //   from: process.env.EMAIL_FROM,
+    //   maxAge: 10 * 60,
+    // }),
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID,
       clientSecret: process.env.DISCORD_CLIENT_SECRET,
