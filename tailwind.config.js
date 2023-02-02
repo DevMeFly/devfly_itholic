@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -15,6 +17,9 @@ module.exports = {
         white: '#FFFFFF',
         black: '#000000',
         yellow: '#FFD054',
+      },
+      fontFamily: {
+        poppins: ['var(--font-poppins)', ...fontFamily.sans],
       },
     },
   },
