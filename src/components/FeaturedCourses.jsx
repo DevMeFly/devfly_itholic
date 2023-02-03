@@ -4,7 +4,7 @@ import Image from 'next/image'
 const FeaturedCourses = () => {
   return (
     <>
-      <div className='flex items-center justify-center'>
+      <div className='flex flex-col items-center justify-center lg:flex-row'>
         <div className=' '>
           <Image
             src='/images/featured.png'
@@ -21,29 +21,11 @@ const FeaturedCourses = () => {
               <span className='text-[38px] font-bold text-yellow'>Courses</span>
             </div>
           </div>
-          <div className='pg w-1/2 text-[20px] font-light '>
+          <div className='pg text-[20px] font-light lg:w-1/2 '>
             Discover, collect, and learn extraordinary courses through our
             awesome platform.
           </div>
           <Stack direction='row' spacing={2}>
-            <Button
-              variant='outlined'
-              className='hover:text-primay rounded-xl border-2 border-text px-3 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
-            >
-              Verification
-            </Button>
-            <Button
-              variant='outlined'
-              className='hover:text-primay rounded-xl border-2 border-text px-3 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
-            >
-              General
-            </Button>
-            <Button
-              variant='outlined'
-              className='hover:text-primay rounded-xl border-2 border-text px-3 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
-            >
-              Features
-            </Button>
             <Button
               variant='outlined'
               className='hover:text-primay rounded-xl border-2 border-text px-3 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
