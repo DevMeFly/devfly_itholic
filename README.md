@@ -9,22 +9,12 @@ npm install
 npm run dev
 ```
 
-If Prisma raises an error complaining about DATABASE_URL from DOTENV file, this workaround works fine :
+nextjs-auth0 GitHub repo : https://github.com/auth0/nextjs-auth0
+
+You can execute the following command to generate a suitable string for the AUTH0_SECRET value:
 
 ```bash
-npm install -g dotenv-cli
-
-#to load .env vars then open prisma studio
-dotenv -e .env.local -- npx prisma studio
-
-#or load .env vars then migrate to create or update changes from models to tables (better)
-dotenv -e .env.local -- npx prisma migrate dev
-
-#or load .env vars migrate to create or update changes from models to tables then does not interact with or rely on migrations. The migrations table will not be updated, and no migration files will be generated.(avoid)
-dotenv -e .env.local -- npx prisma db push
-
-#or to truncate all tables
-dotenv -e .env.local -- npx prisma migrate reset
+node -e "console.log(crypto.randomBytes(32).toString('hex'))"
 
 #Functionalities:
 
