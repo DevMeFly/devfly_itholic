@@ -4,10 +4,10 @@ import Stack from '@mui/material/Stack'
 import Link from 'next/link'
 
 const DesktopNav = () => {
-  const { user, error, isLoading } = useUser()
+  const { user } = useUser()
 
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>{error.message}</div>
+  // if (isLoading) return <div>Loading...</div>
+  // if (error) return <div>{error.message}</div>
 
   return (
     <>
