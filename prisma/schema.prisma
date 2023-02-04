@@ -10,17 +10,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        Int      @id @default(autoincrement())
+  email        String        @unique
+  // stripeId     String        @unique
+  createdAt    DateTime      @default(now())
+  isSubscribed  Boolean     @default(false)
+  courses      Course[]
+}
+
 model Course {
-    id        Int      @id @default(autoincrement())
-    title     String   @unique
-    createdAt DateTime @default(now())
-    lessons   Lesson[]
+  id        Int      @id @default(autoincrement())
+  title     String   @unique
+  description     String
+  createdAt DateTime @default(now())
+  lessons   Lesson[]
+  users     User[]
+  price     Int
+  slug      String  @unique
 }
 
 model Lesson {
-    id        Int      @id @default(autoincrement())
-    title     String   @unique
-    courseId  Int
-    createdAt DateTime @default(now())
-    course    Course   @relation(fields: [courseId], references: [id])
+  id        Int      @id @default(autoincrement())
+  title     String   @unique
+  description     String
+  courseId  Int
+  createdAt DateTime @default(now())
+  course    Course   @relation(fields: [courseId], references: [id])
+  videoUrl  String
+  slug      String  @unique
 }
