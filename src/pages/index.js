@@ -1,7 +1,10 @@
 import Categories from '@/components/Categories'
+import CourseCard from '@/components/CourseCard'
 import DesktopNav from '@/components/DesktopNav'
-import FeaturedCourses from '@/components/FeaturedCourses'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Instructors from '@/components/Instructors'
+import Testimonial from '@/components/testimonial'
 import Head from 'next/head'
 
 export default function Home() {
@@ -14,11 +17,14 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='flex flex-col gap-10 bg-primary p-10'>
+      <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
         <DesktopNav />
         <Header />
         <Categories />
-        <FeaturedCourses />
+        <CourseCard />
+        <Instructors />
+        <Testimonial />
+        <Footer />
       </main>
     </>
   )
