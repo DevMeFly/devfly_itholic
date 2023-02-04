@@ -1,8 +1,8 @@
 import { BsFillArrowUpRightSquareFill } from 'react-icons/bs'
 import { RxAvatar } from 'react-icons/rx'
 
-const Intructors = () => {
-  const Intructors = [
+const Instructors = () => {
+  const Instructors = [
     {
       id: 1,
       name: 'Bessie Cooper',
@@ -36,13 +36,13 @@ const Intructors = () => {
           <div className='title text-[38px] font-bold text-text'>
             Meet Our best{' '}
             <span className='text-[38px] font-bold text-yellow'>
-              Intructors
+              Instructors
             </span>
           </div>
         </div>
 
         <div className='grid grid-cols-1 justify-around gap-10 lg:grid-cols-3  '>
-          {Intructors.map(({ id, name }) => {
+          {Instructors.map(({ id, name }) => {
             return (
               <div
                 key={id}
@@ -71,4 +71,4 @@ const Intructors = () => {
   )
 }
 
-export default Intructors
+export default Instructors

@@ -1,4 +1,5 @@
 import { Button, Stack } from '@mui/material'
+import Image from 'next/image'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
 const Categories = () => {
@@ -71,7 +72,7 @@ const Categories = () => {
                 className='flex w-full  flex-col items-center justify-center gap-5 rounded-xl bg-purple px-2 py-3'
               >
                 <div>
-                  <img
+                  <Image
                     src={image}
                     width={320}
                     height={250}

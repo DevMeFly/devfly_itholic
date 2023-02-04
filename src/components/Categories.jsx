@@ -33,7 +33,7 @@ const Categories = () => {
       icon: <CgWebsite size={35} />,
     },
     {
-      id: 5,
+      id: 6,
       title: 'Programming',
       icon: <AiOutlineAntDesign size={35} />,
     },
