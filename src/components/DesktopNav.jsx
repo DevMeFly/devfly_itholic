@@ -105,7 +105,7 @@ const DesktopNav = () => {
               >
                 <Button
                   variant='outlined'
-                  className='hover:text-primay rounded-xl border-2 border-text px-10 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
+                  className='rounded-xl border-2 border-text px-10 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
                 >
                   Logout
                 </Button>
@@ -118,7 +118,7 @@ const DesktopNav = () => {
               >
                 <Button
                   variant='outlined'
-                  className='hover:text-primay rounded-xl border-2 border-text px-10 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
+                  className='rounded-xl border-2 border-text px-10 py-2 font-semibold text-text hover:border-yellow hover:bg-yellow hover:text-primary'
                 >
                   Login
                 </Button>
