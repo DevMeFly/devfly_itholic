@@ -1,7 +1,6 @@
 import Categories from '@/components/Categories'
 import CourseCard from '@/components/CourseCard'
 import DesktopNav from '@/components/DesktopNav'
-import FeaturedCourses from '@/components/FeaturedCourses'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Instructors from '@/components/Instructors'
@@ -22,7 +21,6 @@ export default function Home() {
         <DesktopNav />
         <Header />
         <Categories />
-        <FeaturedCourses />
         <CourseCard />
         <Instructors />
         <Testimonial />

@@ -29,14 +29,19 @@ const Categories = () => {
     },
     {
       id: 5,
-      title: 'Machine Learning',
-      icon: <AiOutlineDatabase size={35} />,
+      title: 'Management',
+      icon: <CgWebsite size={35} />,
+    },
+    {
+      id: 5,
+      title: 'Programming',
+      icon: <AiOutlineAntDesign size={35} />,
     },
   ]
 
   return (
     <>
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-col '>
         <div className='flex justify-center gap-2 p-10 text-center'>
           <div className='title text-[38px] font-bold text-text'>
             Most Popular{' '}
@@ -46,7 +51,7 @@ const Categories = () => {
           </div>
         </div>
 
-        <div className=' grid grid-cols-2 items-center justify-around  gap-10 lg:flex  '>
+        <div className=' grid grid-cols-2 items-center justify-around  gap-10 lg:flex lg:gap-5  '>
           {Categories.map(({ id, title, icon }) => {
             return (
               <div
