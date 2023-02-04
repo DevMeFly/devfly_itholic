@@ -17,7 +17,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='flex flex-col gap-24 bg-primary p-10'>
+      <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
         <DesktopNav />
         <Header />
         <Categories />
