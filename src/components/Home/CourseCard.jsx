@@ -1,53 +1,9 @@
 import { Button, Stack } from '@mui/material'
 import Image from 'next/image'
+import CourseImage from 'public/static/images/img1.png'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
 const Categories = ({ courses }) => {
-  const Categories = [
-    {
-      id: 1,
-      title: 'Game Development : Programming with Java',
-      creator: 'Mark Smith',
-      category: 'Developement',
-      image: '/images/img1.png',
-    },
-    {
-      id: 2,
-      title: ' Product design and analysis',
-      creator: 'Mark Smith',
-      category: 'Design',
-      image: '/images/img2.png',
-    },
-    {
-      id: 3,
-      title: 'Build a Website with HTML, CSS ',
-      creator: 'Adam Smith',
-      category: 'Development',
-      image: '/images/img3.png',
-    },
-    {
-      id: 4,
-      title: 'Grow your web development skills',
-      creator: 'Adam Smith',
-      category: 'Data Science',
-      image: '/images/img4.png',
-    },
-    {
-      id: 5,
-      creator: 'Natasha Winfrey',
-      title: 'Computer science for beginners',
-      category: 'Data Science',
-      image: '/images/img5.png',
-    },
-    {
-      id: 6,
-      creator: 'Natasha Winfrey',
-      title: ' Data Scientist: Machine Learning Specialist',
-      category: 'Data Science',
-      image: '/images/img1.png',
-    },
-  ]
-
   return (
     <>
       <div className=' flex flex-col gap-10 '>
@@ -73,7 +29,7 @@ const Categories = ({ courses }) => {
               >
                 <div>
                   <Image
-                    src='/images/img1.png'
+                    src={CourseImage}
                     width={320}
                     height={250}
                     alt=''

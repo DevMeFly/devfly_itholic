@@ -10,8 +10,6 @@ import { AiOutlineMenu } from 'react-icons/ai'
 const DesktopNav = () => {
   const { user } = useUser()
 
-  // if (isLoading) return <div>Loading...</div>
-  // if (error) return <div>{error.message}</div>
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -49,36 +47,44 @@ const DesktopNav = () => {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem onClick={handleClose}>Home</MenuItem>
-            <MenuItem onClick={handleClose}>Courses</MenuItem>
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem component='a' href='/your-path' onClick={handleClose}>
+              Home
+            </MenuItem>
+            <MenuItem component='a' href='/your-path' onClick={handleClose}>
+              Dashboard
+            </MenuItem>
+            <MenuItem component='a' href='/your-path' onClick={handleClose}>
+              Courses
+            </MenuItem>
+            <MenuItem component='a' href='/account' onClick={handleClose}>
+              Profile
+            </MenuItem>
             {user ? (
-              <Link
+              <MenuItem
+                component='a'
                 href='/api/auth/logout'
-                className='font-semibold text-text no-underline'
+                onClick={handleClose}
               >
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-              </Link>
+                Logout
+              </MenuItem>
             ) : (
-              <Link
+              <MenuItem
+                component='a'
                 href='/api/auth/login'
-                className='font-semibold text-text no-underline'
+                onClick={handleClose}
               >
-                <MenuItem onClick={handleClose}>Login</MenuItem>
-              </Link>
+                Login
+              </MenuItem>
             )}
           </Menu>
         </div>
         <div className='hidden lg:flex lg:gap-16 lg:text-lg '>
           <Link legacyBehavior href='/'>
-            <a
-              className='font-semibold text-text no-underline decoration-yellow  hover:underline hover:decoration-4'
-              target='_blank'
-            >
+            <a className='font-semibold text-text no-underline decoration-yellow  hover:underline hover:decoration-4'>
               Home
             </a>
           </Link>
-          <Link legacyBehavior href=''>
+          <Link legacyBehavior href='/courses/'>
             <a
               className='font-semibold text-text no-underline  decoration-yellow hover:underline hover:decoration-4'
               target='_blank'
@@ -86,7 +92,7 @@ const DesktopNav = () => {
               Courses
             </a>
           </Link>
-          <Link legacyBehavior href=''>
+          <Link legacyBehavior href='/account'>
             <a
               className='font-semibold text-text  no-underline decoration-yellow hover:underline hover:decoration-4'
               target='_blank'
