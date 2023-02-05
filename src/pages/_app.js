@@ -20,11 +20,11 @@ const App = (props) => {
 
   return (
     <UserProvider>
-      <main className={`${poppins.variable} font-sans`}>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <main className={`${poppins.variable} font-sans`}>
           {getLayout(<Component {...pageProps} />)}
-        </ThemeProvider>
-      </main>
+        </main>
+      </ThemeProvider>
       ,
     </UserProvider>
   )
