@@ -1,5 +1,3 @@
-// pages/dashboard.js
-
 import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 const Profile = ({ user }) => {
