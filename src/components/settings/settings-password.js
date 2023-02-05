@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
   Box,
   Button,
@@ -8,6 +7,7 @@ import {
   Divider,
   TextField,
 } from '@mui/material'
+import { useState } from 'react'
 
 export const SettingsPassword = (props) => {
   const [values, setValues] = useState({

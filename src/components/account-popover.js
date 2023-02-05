@@ -1,7 +1,5 @@
-import { useContext } from 'react'
-import Router from 'next/router'
-import PropTypes from 'prop-types'
 import { Box, MenuItem, MenuList, Popover, Typography } from '@mui/material'
+import PropTypes from 'prop-types'
 
 export const AccountPopover = (props) => {
   const { anchorEl, onClose, open, ...other } = props

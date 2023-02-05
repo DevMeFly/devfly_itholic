@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import {
   Avatar,
   Box,
@@ -8,6 +7,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
+import PropTypes from 'prop-types'
 import { Clock as ClockIcon } from '../../icons/clock'
 import { Download as DownloadIcon } from '../../icons/download'
 

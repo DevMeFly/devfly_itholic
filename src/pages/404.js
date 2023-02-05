@@ -1,7 +1,7 @@
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import { Box, Button, Container, Typography } from '@mui/material'
 import Head from 'next/head'
 import NextLink from 'next/link'
-import { Box, Button, Container, Typography } from '@mui/material'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 const Page = () => (
   <>
@@ -51,7 +51,7 @@ const Page = () => (
               sx={{ mt: 3 }}
               variant='contained'
             >
-              Go back to dashboard
+              Go back to Home
             </Button>
           </NextLink>
         </Box>

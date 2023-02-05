@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import { Box, Container, Grid, Pagination } from '@mui/material'
-import { products } from '../__mocks__/products'
-import { ProductCard } from '../components/product/product-card'
+import Head from 'next/head'
 import { DashboardLayout } from '../components/dashboard-layout'
+import { ProductCard } from '../components/product/product-card'
+import { products } from '../__mocks__/products'
 
 const Page = () => (
   <>

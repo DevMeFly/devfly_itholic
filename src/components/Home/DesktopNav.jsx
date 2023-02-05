@@ -71,14 +71,11 @@ const DesktopNav = () => {
         </div>
         <div className='hidden lg:flex lg:gap-16 lg:text-lg '>
           <Link legacyBehavior href='/'>
-            <a
-              className='font-semibold text-text no-underline decoration-yellow  hover:underline hover:decoration-4'
-              target='_blank'
-            >
+            <a className='font-semibold text-text no-underline decoration-yellow  hover:underline hover:decoration-4'>
               Home
             </a>
           </Link>
-          <Link legacyBehavior href=''>
+          <Link legacyBehavior href='/courses/'>
             <a
               className='font-semibold text-text no-underline  decoration-yellow hover:underline hover:decoration-4'
               target='_blank'
@@ -86,7 +83,7 @@ const DesktopNav = () => {
               Courses
             </a>
           </Link>
-          <Link legacyBehavior href=''>
+          <Link legacyBehavior href='/account'>
             <a
               className='font-semibold text-text  no-underline decoration-yellow hover:underline hover:decoration-4'
               target='_blank'
