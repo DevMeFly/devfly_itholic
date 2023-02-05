@@ -34,6 +34,16 @@ dotenv -e .env.local -- npx prisma db push
 #or to truncate all tables
 dotenv -e .env.local -- npx prisma migrate reset
 
+#ngrok forwarding
+npx ngrok http 3000 --authtoken "TOKEN"
+
+#stripe login expires in 90 days
+.\stripe login
+
+
+#stripe forwarding
+.\stripe listen --forward-to localhost:3000/api/stripe-hooks
+
 #Functionalities:
 
 #5 : Login + sign up (pages) ---------------------------------------------------------------> Nada
