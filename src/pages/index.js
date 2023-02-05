@@ -6,7 +6,7 @@ import Header from '@/components/Home/Header'
 import Instructors from '@/components/Home/Instructors'
 import Testimonial from '@/components/Home/Testimonial'
 import Head from 'next/head'
-import { getCourses } from '../../utils/db'
+import { getCourses } from '../utils/db'
 
 export default function Home(courses) {
   return (

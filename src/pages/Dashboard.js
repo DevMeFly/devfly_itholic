@@ -1,12 +1,14 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
+import Head from 'next/head'
+import { DashboardLayout } from '../components/dashboard-layout'
 
-const Dashboard = () => {
-  return (
-    <div className='g'>
-      <div className='j'>hi</div>
-    </div>
-  )
-}
+const Page = () => (
+  <>
+    <Head>
+      <title>Dashboard | Material Kit</title>
+    </Head>
+  </>
+)
 
-export const getServerSideProps = withPageAuthRequired()
-export default Dashboard
+Page.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>
+
+export default Page

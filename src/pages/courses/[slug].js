@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getCourseBySlug, getCourses } from '../../../utils/db'
+import { getCourseBySlug, getCourses } from '../../utils/db'
 
 const CoursePage = ({ course: { title, price, lessons, description } }) => {
   const isFree = price === 0

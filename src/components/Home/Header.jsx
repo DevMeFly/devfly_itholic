@@ -1,17 +1,12 @@
 import { Button, Stack } from '@mui/material'
 import Image from 'next/image'
+import HeaderImage from 'public/static/images/header.png'
 
 const Header = () => {
   return (
     <div className=' Header  flex flex-col items-center gap-10 text-center font-poppins lg:flex-row-reverse lg:text-left'>
       <div className=' hidden lg:flex'>
-        <Image
-          src='/images/header.png'
-          alt='header'
-          width={500}
-          height={500}
-          priority
-        />
+        <Image src={HeaderImage} alt='header' width={500} height={500} />
       </div>
 
       <div className='flex flex-col items-center  justify-center gap-9 px-3 text-text lg:items-start'>

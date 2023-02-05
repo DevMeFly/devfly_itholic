@@ -35,7 +35,17 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-player": "^2.11.0",
-    "stripe": "^11.9.1"
+    "stripe": "^11.9.1",
+    "@emotion/cache": "11.10.3",
+    "@emotion/server": "11.10.0",
+    "@mui/lab": "5.0.0-alpha.99",
+    "@mui/system": "5.10.5",
+    "@mui/x-date-pickers": "5.0.1",
+    "date-fns": "2.29.3",
+    "formik": "2.2.9",
+    "prop-types": "15.8.1",
+    "react-perfect-scrollbar": "1.5.8",
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
