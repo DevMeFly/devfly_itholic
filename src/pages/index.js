@@ -6,8 +6,9 @@ import Header from '@/components/Header'
 import Instructors from '@/components/Instructors'
 import Testimonial from '@/components/testimonial'
 import Head from 'next/head'
+import { getCourses } from '../../utils/db'
 
-export default function Home() {
+export default function Home(courses) {
   return (
     <>
       <Head>
@@ -19,13 +20,25 @@ export default function Home() {
 
       <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
         <DesktopNav />
+        <div className='flex flex-wrap'></div>
+        {/* <AllCourses courses={courses} /> */}
         <Header />
         <Categories />
-        <CourseCard />
+        <CourseCard courses={courses} />
         <Instructors />
         <Testimonial />
         <Footer />
       </main>
     </>
   )
+}
+
+export const getStaticProps = async () => {
+  const data = await getCourses()
+
+  return {
+    props: {
+      courses: JSON.parse(JSON.stringify(data)),
+    },
+  }
 }

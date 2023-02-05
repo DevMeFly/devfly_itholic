@@ -2,7 +2,7 @@ import { Button, Stack } from '@mui/material'
 import Image from 'next/image'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
-const Categories = () => {
+const Categories = ({ courses }) => {
   const Categories = [
     {
       id: 1,
@@ -53,7 +53,7 @@ const Categories = () => {
       <div className=' flex flex-col gap-10 '>
         {' '}
         <div className='flex flex-col items-center gap-4 text-center text-text'>
-          <div className='fles flex-col gap-0'>
+          <div className='flex flex-col gap-0'>
             <div className='title text-[38px] font-bold'>
               Featured{' '}
               <span className='text-[38px] font-bold text-yellow'>Courses</span>
@@ -65,7 +65,7 @@ const Categories = () => {
           </div>
         </div>
         <div className=' flex flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-2'>
-          {Categories.map(({ id, creator, title, category, image }) => {
+          {courses.courses.map(({ id, title }) => {
             return (
               <div
                 key={id}
@@ -73,7 +73,7 @@ const Categories = () => {
               >
                 <div>
                   <Image
-                    src={image}
+                    src='/images/img1.png'
                     width={320}
                     height={250}
                     alt=''
@@ -83,7 +83,8 @@ const Categories = () => {
                 <div className='text-[20px] font-bold text-text'>{title}</div>
                 <div className='flex gap-6'>
                   <div className='  font-thin text-text'>
-                    Created by <span className='text-yellow'> {creator}</span>
+                    Created by{' '}
+                    <span className='text-yellow'>Aimade Youssra</span>
                   </div>
                   <div className='text-yellow'>
                     <AiFillStar />
@@ -99,7 +100,7 @@ const Categories = () => {
                       variant='outlined'
                       className='hover:text-primay rounded-xl  border-text px-5 py-2 font-thin text-text '
                     >
-                      {category}
+                      Web
                     </Button>
                   </Stack>
                   <Stack direction='row'>
