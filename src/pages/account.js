@@ -1,3 +1,4 @@
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { Box, Container, Grid, Typography } from '@mui/material'
 import Head from 'next/head'
 import { AccountProfile } from '../components/account/account-profile'
@@ -33,6 +34,7 @@ const Page = () => (
   </>
 )
 
+export const getServerSideProps = withPageAuthRequired()
 Page.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>
 
 export default Page
