@@ -20,7 +20,6 @@ export default function Home(courses) {
 
       <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
         <DesktopNav />
-        <div className='flex flex-wrap'></div>
         <Header />
         <Categories />
         <CourseCard courses={courses} />
