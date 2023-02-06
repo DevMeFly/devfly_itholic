@@ -1,14 +1,10 @@
-import Categories from '@/components/Home/Categories'
 import CourseCard from '@/components/Home/CourseCard'
 import DesktopNav from '@/components/Home/DesktopNav'
 import Footer from '@/components/Home/Footer'
-import Header from '@/components/Home/Header'
-import Instructors from '@/components/Home/Instructors'
-import Testimonial from '@/components/Home/Testimonial'
 import Head from 'next/head'
-import { getCourses } from '../utils/db'
+import { getCourses } from '../../utils/db'
 
-export default function Home(courses) {
+export default function Courses(courses) {
   return (
     <>
       <Head>
@@ -20,11 +16,7 @@ export default function Home(courses) {
 
       <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
         <DesktopNav />
-        <Header />
-        <Categories />
-        <CourseCard name={'Featured '} courses={courses} />
-        <Instructors />
-        <Testimonial />
+        <CourseCard name={'All '} courses={courses} />
         <Footer />
       </main>
     </>

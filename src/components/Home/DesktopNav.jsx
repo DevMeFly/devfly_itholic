@@ -62,7 +62,7 @@ const DesktopNav = () => {
             <MenuItem component='a' href='/dashboard' onClick={handleClose}>
               Dashboard
             </MenuItem>
-            <MenuItem component='a' href='/your-path' onClick={handleClose}>
+            <MenuItem component='a' href='/courses' onClick={handleClose}>
               Courses
             </MenuItem>
             <MenuItem
@@ -98,10 +98,7 @@ const DesktopNav = () => {
             </a>
           </Link>
           <Link legacyBehavior href='/courses/'>
-            <a
-              className='font-semibold text-text no-underline  decoration-yellow hover:underline hover:decoration-4'
-              target='_blank'
-            >
+            <a className='font-semibold text-text no-underline  decoration-yellow hover:underline hover:decoration-4'>
               Courses
             </a>
           </Link>
