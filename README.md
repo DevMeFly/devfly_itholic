@@ -51,6 +51,13 @@ npx ngrok http 3000 --authtoken "TOKEN"
 },
 #Then run
 npx prisma db seed
+
+#hard pull and rewrite locally
+git reset --hard origin/aimade
+
+#hard push and delete previous commit(s) and push the current one.
+git push origin <your_branch_name> --force
+
 #Functionalities:
 
 #5 : Login + sign up (pages) ---------------------------------------------------------------> Nada
