@@ -3,12 +3,19 @@ import Link from 'next/link'
 import Player from 'react-player/lazy'
 import prisma from '../../../../lib/prisma'
 
-const LessonPage = ({ lesson: { title, videoUrl }, user }) => {
+const LessonPage = ({ lesson: { title, videoUrl, content }, user }) => {
   return (
     <div className='text-white'>
       <h2 className='mb-4 text-3xl'>{title}</h2>
       {videoUrl ? (
-        <Player width='50%' height='100%' url={videoUrl} controls={true} />
+        <>
+          <Player width='50%' height='100%' url={videoUrl} controls={true} />
+          <ul className='p-2'>
+            {/* {content.map((contents) => (
+              <li key={contents.id}>{contents.content}</li>
+            ))} */}
+          </ul>
+        </>
       ) : user ? (
         <>
           <Link href='/pricing'>

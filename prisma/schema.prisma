@@ -19,17 +19,27 @@ model User {
   courses      Course[]
 }
 
+model Roadmap {
+  id        Int      @id @default(autoincrement())
+  title     String   
+  roadmaplink     String
+  courses   Course[]
+}
+
 model Course {
   id        Int      @id @default(autoincrement())
   title     String   @unique
   description     String
   createdAt DateTime @default(now())
   lessons   Lesson[]
+  requirements   Requirement[]
   users     User[]
   author   String
   price     Int
   thumbnail String
+  roadmapId  Int
   slug      String  @unique
+  roadmap    Roadmap   @relation(fields: [roadmapId], references: [id])
 }
 
 model Lesson {
@@ -40,5 +50,22 @@ model Lesson {
   createdAt DateTime @default(now())
   course    Course   @relation(fields: [courseId], references: [id])
   videoUrl  String
+  content   Content[]
   slug      String  @unique
 }
+model Content {
+  id        Int      @id @default(autoincrement())
+  content     String
+  lessonId  Int   
+  lesson    Lesson   @relation(fields: [lessonId], references: [id])
+}
+
+model Requirement {
+  id        Int      @id @default(autoincrement())
+  courseId  Int
+  course    Course   @relation(fields: [courseId], references: [id])
+  title     String   
+  requirementlink     String   
+}
+
+
