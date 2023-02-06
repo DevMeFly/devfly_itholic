@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 
@@ -9,20 +10,20 @@ const Footer = () => {
           <div className='font-bold'>Quick Links</div>
           <div className='flex flex-col gap-4 font-thin'>
             <div>
-              <a href='' className='text-text no-underline'>
+              <Link href='' className='text-text no-underline'>
                 Home
-              </a>
+              </Link>
             </div>
             <div>
-              <a href='' className='text-text no-underline'>
+              <Link href='' className='text-text no-underline'>
                 {' '}
                 Courses
-              </a>
+              </Link>
             </div>
             <div>
-              <a href='' className='text-text no-underline'>
+              <Link href='' className='text-text no-underline'>
                 Profile
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -30,9 +31,9 @@ const Footer = () => {
           <div className='font-bold'>Sign Up</div>
           <div className='flex flex-col gap-4 font-thin'>
             <div>
-              <a href='' className='text-text no-underline'>
+              <Link href='' className='text-text no-underline'>
                 Sign In
-              </a>
+              </Link>
             </div>
           </div>
         </div>

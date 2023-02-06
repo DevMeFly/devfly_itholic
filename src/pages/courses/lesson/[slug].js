@@ -1,7 +1,7 @@
 import { getSession } from '@auth0/nextjs-auth0'
 import Link from 'next/link'
 import Player from 'react-player/lazy'
-import prisma from '../../../lib/prisma'
+import prisma from '../../../../lib/prisma'
 
 const LessonPage = ({ lesson: { title, videoUrl }, user }) => {
   return (

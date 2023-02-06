@@ -10,12 +10,14 @@ const Header = () => {
       </div>
       <div className='flex flex-col items-center justify-start gap-9 px-3 text-text lg:items-start'>
         <div className='flex flex-col gap-0'>
-          <div className='title text-[38px] font-bold'>Find Most Exciting</div>
+          <div className='font-poppins text-[38px] font-bold'>
+            Find Most Exciting
+          </div>
           <span className='text-[38px] font-bold text-yellow'>
             Online Courses
           </span>
         </div>
-        <div className='text-[20px] font-light '>
+        <div className='font-poppins text-[20px] font-light'>
           Build your skills, boost your capacities and learn whenever and
           wherever you are.
         </div>

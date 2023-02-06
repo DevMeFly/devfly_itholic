@@ -11,8 +11,8 @@ const CoursePage = ({ course: { title, price, lessons, description } }) => {
       <ul className='p-2'>
         {lessons.map((lesson) => (
           <li key={lesson.id}>
-            <Link href={`/lesson/${lesson.slug}`}>
-              {lesson.id}. {lesson.title}------------{lesson.description}
+            <Link href={`/courses/lesson/${lesson.slug}`}>
+              {lesson.id}. {lesson.title}
             </Link>
           </li>
         ))}

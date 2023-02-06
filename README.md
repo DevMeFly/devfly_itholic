@@ -44,6 +44,13 @@ npx ngrok http 3000 --authtoken "TOKEN"
 #stripe forwarding
 .\stripe listen --forward-to localhost:3000/api/stripe-hooks
 
+#prisma seed
+#addd to package.json
+"prisma": {
+  "seed": "node prisma/seed.js"
+},
+#Then run
+npx prisma db seed
 #Functionalities:
 
 #5 : Login + sign up (pages) ---------------------------------------------------------------> Nada

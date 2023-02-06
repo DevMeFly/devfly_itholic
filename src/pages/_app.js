@@ -8,10 +8,11 @@ const poppins = Poppins({
 })
 
 export default function App({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page)
   return (
     <UserProvider>
       <main className={`${poppins.variable} font-sans`}>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </main>
     </UserProvider>
   )

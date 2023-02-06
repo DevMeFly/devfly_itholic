@@ -3,6 +3,7 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Stack from '@mui/material/Stack'
+import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
@@ -21,7 +22,15 @@ const DesktopNav = () => {
   return (
     <>
       <div className='flex items-center justify-between text-text'>
-        <div className='flex items-center '>
+        <div className='flex items-center gap-5'>
+          <Image
+            width={70}
+            height={70}
+            priority
+            src='/logo.png'
+            alt='logo'
+            className='rounded-xl'
+          />
           <div className='text-lg font-bold'>
             Skills <span className='text-yellow'> Builder</span>
           </div>
@@ -47,16 +56,20 @@ const DesktopNav = () => {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem component='a' href='/your-path' onClick={handleClose}>
+            <MenuItem component='a' href='/' onClick={handleClose}>
               Home
             </MenuItem>
-            <MenuItem component='a' href='/your-path' onClick={handleClose}>
+            <MenuItem component='a' href='/dashboard' onClick={handleClose}>
               Dashboard
             </MenuItem>
             <MenuItem component='a' href='/your-path' onClick={handleClose}>
               Courses
             </MenuItem>
-            <MenuItem component='a' href='/account' onClick={handleClose}>
+            <MenuItem
+              component='a'
+              href='/dashboard/profile'
+              onClick={handleClose}
+            >
               Profile
             </MenuItem>
             {user ? (
@@ -92,7 +105,15 @@ const DesktopNav = () => {
               Courses
             </a>
           </Link>
-          <Link legacyBehavior href='/account'>
+          <Link legacyBehavior href='/dashboard'>
+            <a
+              className='font-semibold text-text  no-underline decoration-yellow hover:underline hover:decoration-4'
+              target='_blank'
+            >
+              Dashboard
+            </a>
+          </Link>
+          <Link legacyBehavior href='/dashboard/profile'>
             <a
               className='font-semibold text-text  no-underline decoration-yellow hover:underline hover:decoration-4'
               target='_blank'

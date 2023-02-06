@@ -1,12 +1,11 @@
 import { Button, Stack } from '@mui/material'
 import Image from 'next/image'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import CourseImage from '/public/images/img1.png'
 
 const Categories = ({ courses }) => {
   return (
     <>
-      <div className=' flex flex-col gap-10 '>
+      <div className=' flex flex-col gap-10 font-poppins'>
         {' '}
         <div className='flex flex-col items-center gap-4 text-center text-text'>
           <div className='flex flex-col gap-0'>
@@ -15,34 +14,35 @@ const Categories = ({ courses }) => {
               <span className='text-[38px] font-bold text-yellow'>Courses</span>
             </div>
           </div>
-          <div className='pg text-[20px] font-light  '>
+          <div className='pg text-[20px] font-light '>
             Discover, collect, and learn extraordinary courses through our
             awesome platform.
           </div>
         </div>
-        <div className=' flex flex-col items-center justify-center gap-10 lg:grid lg:grid-cols-2'>
-          {courses.courses.map(({ id, title }) => {
+        <div className=' flex flex-col items-center justify-center gap-10 text-center lg:grid lg:grid-cols-3'>
+          {courses.courses.map(({ id, title, thumbnail, author }) => {
             return (
               <div
                 key={id}
-                className='flex w-full flex-col items-center justify-center gap-5 rounded-xl bg-purple px-2 py-3'
+                className='flex w-fit flex-col items-center justify-center gap-5 rounded-xl bg-purple p-3'
               >
                 <div>
                   <Image
-                    src={CourseImage}
+                    src={thumbnail}
                     width={320}
                     height={250}
                     alt=''
                     className='rounded-xl'
                   />
                 </div>
-                <div className='text-[20px] font-bold text-text'>{title}</div>
-                <div className='flex gap-6'>
-                  <div className='  font-thin text-text'>
-                    Created by{' '}
-                    <span className='text-yellow'>Aimade Youssra</span>
+                <div className='max-w-[320px] text-[20px] font-bold text-text'>
+                  {title}
+                </div>
+                <div className='flex max-w-[320px] gap-6'>
+                  <div className='font-thin text-text'>
+                    Created by <span className='text-yellow'>{author}</span>
                   </div>
-                  <div className='text-yellow'>
+                  <div className='flex items-center text-yellow'>
                     <AiFillStar />
                     <AiFillStar />
                     <AiFillStar />
