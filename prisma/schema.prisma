@@ -24,6 +24,7 @@ model Roadmap {
   title     String   
   roadmaplink     String
   icon     String
+  description String?
   courses   Course[]
 }
 

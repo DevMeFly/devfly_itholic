@@ -5,6 +5,7 @@ async function main() {
   const roadmap1 = await prisma.roadmap.create({
     data: {
       title: 'Backend',
+      description: '',
       roadmaplink:
         'https://miro.medium.com/max/1400/1*WWkUziCc9vBMtzkKOyYoJQ.webp',
       icon: 'https://miro.medium.com/max/1400/1*WWkUziCc9vBMtzkKOyYoJQ.webp',
@@ -51,6 +52,7 @@ async function main() {
   const roadmap2 = await prisma.roadmap.create({
     data: {
       title: 'Backend',
+      description: '',
       roadmaplink: 'https://roadmap.sh/roadmaps/backend.png',
       icon: 'https://miro.medium.com/max/1400/1*WWkUziCc9vBMtzkKOyYoJQ.webp',
       courses: {

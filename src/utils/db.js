@@ -2,7 +2,11 @@
 import prisma from '../../lib/prisma'
 
 const getRoadmaps = async () => {
-  const roadmap = await prisma.Roadmap.findMany({})
+  const roadmap = await prisma.Roadmap.findMany({
+    orderBy: {
+      id: 'asc',
+    },
+  })
   await prisma.$disconnect()
   return roadmap
 }

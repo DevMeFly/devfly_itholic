@@ -51,12 +51,12 @@ const Categories = ({ roadmap }) => {
             </span>
           </div>
         </div>
-        <div className=' grid grid-cols-2 items-center justify-around  gap-10 lg:flex lg:gap-5  '>
-          {roadmap.map(({ id, title, roadmaplink, icon }) => {
+        <div className='grid  items-center justify-around  gap-10 lg:flex lg:gap-5  '>
+          {roadmap.map(({ id, title, roadmaplink, icon, description }) => {
             return (
               <div
                 key={id}
-                className='flex w-full  flex-col items-center justify-center gap-4 rounded-xl bg-purple p-3'
+                className='flex w-full max-w-[380px] flex-col items-center justify-center gap-4 rounded-xl bg-purple p-3'
               >
                 <div className='text-gray rounded-full bg-text p-5 text-base font-bold text-black'>
                   <Image
@@ -67,9 +67,12 @@ const Categories = ({ roadmap }) => {
                     className='rounded-xl'
                   />
                 </div>
-                <div className=' flex items-center gap-4 text-center'>
+                <div className=' flex flex-col items-center gap-4 text-center'>
                   <div className='text-lg font-bold transition duration-500 dark:text-white'>
                     {title}
+                  </div>
+                  <div className='transition duration-500 dark:text-white'>
+                    {description} 2023
                   </div>
                 </div>
               </div>
