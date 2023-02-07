@@ -21,7 +21,7 @@ const DesktopNav = () => {
   }
   return (
     <>
-      <div className='flex items-center justify-between text-text'>
+      <div className='flex items-center justify-between font-poppins text-text'>
         <div className='flex items-center gap-5'>
           <Image
             width={70}

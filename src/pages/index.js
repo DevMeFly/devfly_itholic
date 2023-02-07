@@ -6,9 +6,9 @@ import Header from '@/components/Home/Header'
 import Instructors from '@/components/Home/Instructors'
 import Testimonial from '@/components/Home/Testimonial'
 import Head from 'next/head'
-import { getCourses } from '../utils/db'
+import { getCourses, getRoadmaps } from '../utils/db'
 
-export default function Home(courses) {
+export default function Home({ courses, roadmaps }) {
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ export default function Home(courses) {
       <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
         <DesktopNav />
         <Header />
-        <Categories />
+        <Categories roadmap={roadmaps} />
         <CourseCard name={'Featured '} courses={courses} />
         <Instructors />
         <Testimonial />
@@ -32,11 +32,13 @@ export default function Home(courses) {
 }
 
 export const getStaticProps = async () => {
-  const data = await getCourses()
+  const courses = await getCourses()
+  const roadmaps = await getRoadmaps()
 
   return {
     props: {
-      courses: JSON.parse(JSON.stringify(data)),
+      courses: JSON.parse(JSON.stringify(courses)),
+      roadmaps,
     },
   }
 }

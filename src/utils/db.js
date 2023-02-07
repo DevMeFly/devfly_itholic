@@ -1,13 +1,26 @@
 // utils/db.js
 import prisma from '../../lib/prisma'
 
-const getCourses = async () => {
-  const courses = await prisma.course.findMany({
-    include: {
-      lessons: true,
+const getRoadmaps = async () => {
+  const roadmap = await prisma.Roadmap.findMany({
+    orderBy: {
+      id: 'asc',
     },
   })
   await prisma.$disconnect()
+  return roadmap
+}
+
+const getCourses = async () => {
+  const courses = await prisma.course.findMany({
+    include: {
+      _count: {
+        select: { lessons: true },
+      },
+    },
+  })
+  await prisma.$disconnect()
+  // console.log(courses)
   return courses
 }
 
@@ -17,6 +30,7 @@ const getCourseBySlug = async (slug) => {
       slug,
     },
     include: {
+      requirements: true,
       lessons: {
         orderBy: {
           id: 'asc',
@@ -142,4 +156,5 @@ export {
   enrolUser,
   subscribeUser,
   cancelSubscription,
+  getRoadmaps,
 }
