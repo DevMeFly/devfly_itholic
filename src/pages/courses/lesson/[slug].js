@@ -13,6 +13,7 @@ const LessonPage = ({ lesson: { title, videoUrl }, user, lessons }) => {
         <div className='h-full'>
           <h2 className=' py-2 font-poppins text-xl font-extrabold text-primary'>
             {title}
+            {JSON.stringify(lessons)})
           </h2>
           {videoUrl ? (
             <div className='h-full w-full'>

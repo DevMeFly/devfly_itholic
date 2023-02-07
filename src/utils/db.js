@@ -35,13 +35,6 @@ const getCourseBySlug = async (slug) => {
         orderBy: {
           id: 'asc',
         },
-        include: {
-          content: {
-            orderBy: {
-              id: 'asc',
-            },
-          },
-        },
       },
     },
   })

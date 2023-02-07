@@ -58,6 +58,9 @@ git reset --hard origin/aimade
 #hard push and delete previous commit(s) and push the current one.
 git push origin <your_branch_name> --force
 
+#view json forma in browser
+{JSON.stringify(response)})
+
 #Functionalities:
 
 #1 : Home page------------------------------------------------------------------------------> Done

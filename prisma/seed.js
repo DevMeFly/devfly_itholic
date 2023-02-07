@@ -37,12 +37,6 @@ async function main() {
                 'Hey gang & welcome to your very first HTML & CSS tutorial. Throughout this crash course series I&apos;ll take you from total beginner to create great-looking sites with HTML & CSS. In this video, we&apos;ll cover what HTML & CSS are, as well as setting up our dev environment. ',
               videoUrl: 'https://www.youtube.com/watch?v=hu-q2zYwEYs&t=139s',
               slug: 'html-css-crash-course-series-lesson-1',
-              content: {
-                create: {
-                  content:
-                    'The <!DOCTYPE html> declaration defines that this document is an HTML5 document',
-                },
-              },
             },
           },
         },
@@ -84,12 +78,6 @@ async function main() {
                 'Hey gang & welcome to your very first HTML & CSS tutorial. Throughout this crash course series I&apos;ll take you from total beginner to create great-looking sites with HTML & CSS. In this video, we&apos;ll cover what HTML & CSS are, as well as setting up our dev environment. ',
               videoUrl: 'https://www.youtube.com/watch?v=hu-q2zYwEYs&t=139s',
               slug: 'Node.js-Crash-Course-Tutorial-lesson1',
-              content: {
-                create: {
-                  content:
-                    'Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs Nodejs',
-                },
-              },
             },
           },
         },
@@ -97,7 +85,7 @@ async function main() {
     },
   })
 
-  console.log({ roadmap2 })
+  console.log({ roadmap1 })
 }
 main()
   .then(async () => {

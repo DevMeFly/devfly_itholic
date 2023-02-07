@@ -104,7 +104,7 @@ const CoursesDetails = ({
             </div>
             <div className='gap2 flex flex-col'>
               <div className='text-[28px] font-bold text-text'>
-                Prerequesites
+                Prerequisites
               </div>
               <div className='font-thin text-[24x] text-text'>
                 {requirements.map((requirements, i) => (
