@@ -20,7 +20,7 @@ const Categories = ({ courses, name }) => {
           </div>
         </div>
         <div className=' flex flex-col items-center justify-center gap-10 text-center lg:grid lg:grid-cols-3'>
-          {courses.courses.map(({ id, title, thumbnail, author, slug }) => {
+          {courses.map(({ id, title, thumbnail, author, slug }) => {
             return (
               <div
                 key={id}
@@ -66,7 +66,7 @@ const Categories = ({ courses, name }) => {
                     <Stack direction='row'>
                       <Button
                         variant='outlined'
-                        className='rounded-xl border-transparent px-5 py-2 font-bold text-text hover:bg-yellow hover:text-primary hover:text-primary '
+                        className='rounded-xl border-transparent px-5 py-2 font-bold text-text hover:bg-yellow hover:text-primary '
                       >
                         Enroll Now
                       </Button>

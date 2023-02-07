@@ -1,6 +1,12 @@
 // utils/db.js
 import prisma from '../../lib/prisma'
 
+const getRoadmaps = async () => {
+  const roadmap = await prisma.Roadmap.findMany({})
+  await prisma.$disconnect()
+  return roadmap
+}
+
 const getCourses = async () => {
   const courses = await prisma.course.findMany({
     include: {
@@ -17,6 +23,7 @@ const getCourseBySlug = async (slug) => {
       slug,
     },
     include: {
+      requirements: true,
       lessons: {
         orderBy: {
           id: 'asc',
@@ -142,4 +149,5 @@ export {
   enrolUser,
   subscribeUser,
   cancelSubscription,
+  getRoadmaps,
 }

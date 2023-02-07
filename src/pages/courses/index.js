@@ -4,7 +4,7 @@ import Footer from '@/components/Home/Footer'
 import Head from 'next/head'
 import { getCourses } from '../../utils/db'
 
-export default function Courses(courses) {
+export default function Courses({ courses }) {
   return (
     <>
       <Head>
