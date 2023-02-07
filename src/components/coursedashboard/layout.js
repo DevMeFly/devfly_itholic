@@ -16,7 +16,7 @@ const style = {
   main: `h-screen overflow-auto pb-36 pt-8 px-2 md:pb-8 md:pt-4 lg:pt-0`,
 }
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout({ children, lessons }) {
   const { user, error, isLoading } = useUser()
   const { open } = useToggle()
   if (isLoading) return <div className={style.container}></div>
@@ -27,7 +27,7 @@ export default function DashboardLayout({ children }) {
     <div className={style.container}>
       <div className='flex items-start'>
         <Overlay />
-        <SideNavigation mobilePosition='left' />
+        <SideNavigation lessons={lessons} mobilePosition='left' />
         <div
           className={`${style.mainContainer} 
           ${open ? style.open : style.close}`}

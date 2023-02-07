@@ -22,14 +22,14 @@ export default function Page(props) {
   return (
     user && (
       <Box
-        className='bg-primary'
+        className='h-full bg-primary'
         component='main'
         sx={{
           flexGrow: 1,
           py: 8,
         }}
       >
-        <Container maxWidth='lg' className='bg-primary text-text'>
+        <Container maxWidth='lg' className=' text-text'>
           <Typography sx={{ mb: 3 }} variant='h5'>
             My Profile
             {/* {JSON.stringify(user, null, 2)} */}
@@ -43,9 +43,9 @@ export default function Page(props) {
                 updated={Moment(user.updated_at).format('MMMM Do YYYY')}
               />
             </Grid>
-            <Grid item lg={8} md={6} xs={12}>
+            <Grid className='' item lg={8} md={6} xs={12}>
               <form autoComplete='off' noValidate {...props}>
-                <Card className='bg-primary text-text'>
+                <Card className=''>
                   <CardHeader
                     subheader='The information can be edited'
                     title='Profile'
@@ -95,18 +95,6 @@ export default function Page(props) {
                         <TextField
                           fullWidth
                           disabled
-                          label='Phone Number'
-                          name='phone'
-                          // onChange={handleChange}
-                          type='number'
-                          // value={values.phone}
-                          variant='outlined'
-                        />
-                      </Grid>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          disabled
                           label='Country'
                           name='country'
                           // onChange={handleChange}
@@ -115,26 +103,6 @@ export default function Page(props) {
                           variant='outlined'
                         />
                       </Grid>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          label='Select State'
-                          name='state'
-                          disabled
-                          // onChange={handleChange}
-                          required
-                          // select
-                          SelectProps={{ native: true }}
-                          // value={values.state}
-                          variant='outlined'
-                        >
-                          {/* {states.map((option) => (
-                            <option key={option.value} value={option.value}>
-                              {option.label}
-                            </option>
-                          ))} */}
-                        </TextField>
-                      </Grid>
                     </Grid>
                   </CardContent>
                   <Divider />
@@ -142,7 +110,7 @@ export default function Page(props) {
                     sx={{
                       display: 'flex',
                       justifyContent: 'flex-end',
-                      p: 2,
+                      p: 1,
                     }}
                   >
                     <Button

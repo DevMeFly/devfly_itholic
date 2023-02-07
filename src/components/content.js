@@ -718,7 +718,7 @@ const Content = ({ title }) => (
         </div>
       </div>
     </div>
-    <div className='w-full sm:w-1/2 xl:w-1/3'>
+    {/* <div className='w-full sm:w-1/2 xl:w-1/3'>
       <div className='mb-4'>
         <div className='w-full rounded-2xl bg-white p-4 shadow-lg dark:bg-gray-700'>
           <p className='text-md font-bold text-black dark:text-white'>
@@ -804,7 +804,7 @@ const Content = ({ title }) => (
           </ul>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 )
 
