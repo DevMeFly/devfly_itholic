@@ -23,22 +23,27 @@ model Roadmap {
   id        Int      @id @default(autoincrement())
   title     String   
   roadmaplink     String
+  icon     String
+  description String?
   courses   Course[]
 }
 
 model Course {
   id        Int      @id @default(autoincrement())
   title     String   @unique
+  slug      String  @unique
+  whatyoulearn String
+  why String
+  requirements   Requirement[]
+  lessons   Lesson[]
   description     String
   createdAt DateTime @default(now())
-  lessons   Lesson[]
-  requirements   Requirement[]
-  users     User[]
+  duration String
   author   String
+  users     User[]
   price     Int
   thumbnail String
   roadmapId  Int
-  slug      String  @unique
   roadmap    Roadmap   @relation(fields: [roadmapId], references: [id])
 }
 
@@ -47,9 +52,10 @@ model Lesson {
   title     String   @unique
   description     String
   courseId  Int
+  duration String
+  videoUrl  String
   createdAt DateTime @default(now())
   course    Course   @relation(fields: [courseId], references: [id])
-  videoUrl  String
   content   Content[]
   slug      String  @unique
 }

@@ -12,6 +12,18 @@ module.exports = {
         protocol: 'https',
         hostname: 'process.fs.teachablecdn.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'roadmap.sh',
+      },
+      {
+        protocol: 'https',
+        hostname: 'miro.medium.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn-icons-png.flaticon.com',
+      },
     ],
   },
 }
