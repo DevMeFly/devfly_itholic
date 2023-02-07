@@ -19,7 +19,6 @@ const CoursesDetails = ({
     requirements,
     duration,
   },
-  lessonsnum,
 }) => {
   return (
     <>
@@ -34,7 +33,6 @@ const CoursesDetails = ({
         <DesktopNav />
         <div className='flex flex-col gap-5'>
           <div className='text-[38px] font-bold text-text'> {title}</div>
-          {lessonsnum}
           <Image
             src={thumbnail}
             width={500}
@@ -79,7 +77,7 @@ const CoursesDetails = ({
                     Total Duration : {duration}
                   </div>
                 </div>
-                {lessons.map((lesson, i) => (
+                {lessons.map((lesson) => (
                   <Link key={lesson.id} href={`/courses/lesson/${lesson.slug}`}>
                     <Button
                       variant='outlined'

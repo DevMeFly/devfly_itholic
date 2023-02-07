@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
 import data from './data'
 
 const style = {
@@ -9,23 +8,25 @@ const style = {
   link: `duration-200 flex font-thin items-center justify-start my-2 p-4 transition-colors text-gray-500 uppercase w-full lg:hover:text-blue-500`,
 }
 
-export default function SidenavItems() {
+export default function SidenavItems({ lessons }) {
   const { asPath } = useRouter()
   return (
-    <ul>
-      <li>
-        {data.map((item) => (
-          <Link legacyBehavior href={item.link} key={item.title}>
-            <a
-              className={`${style.link} 
+    <>
+      <ul>
+        <li>
+          {data.map((item) => (
+            <Link legacyBehavior href={item.link} key={item.title}>
+              <a
+                className={`${style.link} 
               ${item.link === asPath && style.active}`}
-            >
-              <span>{item.icon}</span>
-              <span className={style.title}>{item.title}</span>
-            </a>
-          </Link>
-        ))}
-      </li>
-    </ul>
+              >
+                <span>{item.icon}</span>
+                <span className={style.title}>{item.title}</span>
+              </a>
+            </Link>
+          ))}
+        </li>
+      </ul>
+    </>
   )
 }

@@ -46,6 +46,7 @@ const getCourseBySlug = async (slug) => {
     },
   })
   await prisma.$disconnect()
+  // console.log(course)
   return course
 }
 
@@ -73,8 +74,13 @@ const getUserByEmail = async (email) => {
 }
 
 const getLessons = async () => {
-  const lessons = await prisma.lesson.findMany()
+  const lessons = await prisma.lesson.findMany({
+    where: {
+      courseId: 2,
+    },
+  })
   await prisma.$disconnect()
+  console.log(lessons)
   return lessons
 }
 
