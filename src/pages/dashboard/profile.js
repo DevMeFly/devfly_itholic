@@ -22,15 +22,16 @@ export default function Page(props) {
   return (
     user && (
       <Box
+        className='bg-primary'
         component='main'
         sx={{
           flexGrow: 1,
           py: 8,
         }}
       >
-        <Container maxWidth='lg'>
-          <Typography sx={{ mb: 3 }} variant='h4'>
-            Account
+        <Container maxWidth='lg' className='bg-primary text-text'>
+          <Typography sx={{ mb: 3 }} variant='h5'>
+            My Profile
             {/* {JSON.stringify(user, null, 2)} */}
           </Typography>
           <Grid container spacing={3}>
@@ -44,7 +45,7 @@ export default function Page(props) {
             </Grid>
             <Grid item lg={8} md={6} xs={12}>
               <form autoComplete='off' noValidate {...props}>
-                <Card>
+                <Card className='bg-primary text-text'>
                   <CardHeader
                     subheader='The information can be edited'
                     title='Profile'
@@ -54,6 +55,7 @@ export default function Page(props) {
                     <Grid container spacing={3}>
                       <Grid item md={6} xs={12}>
                         <TextField
+                          className=''
                           fullWidth
                           disabled
                           helperText='Please specify the first name'

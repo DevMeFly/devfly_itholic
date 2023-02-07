@@ -7,6 +7,7 @@ import {
 import { CgWebsite } from 'react-icons/cg'
 
 const Categories = ({ roadmap }) => {
+  const currentyear = new Date()
   const Categories = [
     {
       id: 1,
@@ -52,7 +53,7 @@ const Categories = ({ roadmap }) => {
           </div>
         </div>
         <div className='grid  items-center justify-around  gap-10 lg:flex lg:gap-5  '>
-          {roadmap.map(({ id, title, roadmaplink, icon, description }) => {
+          {roadmap.map(({ id, title, icon, description }) => {
             return (
               <div
                 key={id}
@@ -72,7 +73,7 @@ const Categories = ({ roadmap }) => {
                     {title}
                   </div>
                   <div className='transition duration-500 dark:text-white'>
-                    {description} 2023
+                    {description} {currentyear.getFullYear()}
                   </div>
                 </div>
               </div>

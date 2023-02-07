@@ -28,7 +28,7 @@ const Categories = ({ courses, name }) => {
               >
                 <Link
                   className='flex w-fit flex-col items-center justify-center gap-5 rounded-xl bg-purple p-3'
-                  href={`/courses/${slug}`}
+                  href={`/course-details/${slug}`}
                 >
                   <div>
                     <Image

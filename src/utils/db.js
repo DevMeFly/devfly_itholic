@@ -14,10 +14,13 @@ const getRoadmaps = async () => {
 const getCourses = async () => {
   const courses = await prisma.course.findMany({
     include: {
-      lessons: true,
+      _count: {
+        select: { lessons: true },
+      },
     },
   })
   await prisma.$disconnect()
+  // console.log(courses)
   return courses
 }
 
