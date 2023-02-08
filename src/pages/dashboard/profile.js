@@ -22,7 +22,7 @@ export default function Page(props) {
   return (
     user && (
       <Box
-        className='h-full rounded-xl bg-primary'
+        className='h-fit rounded-xl bg-primary'
         component='main'
         sx={{
           flexGrow: 1,
