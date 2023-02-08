@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   AiOutlineAntDesign,
   AiOutlineDatabase,
@@ -53,29 +54,34 @@ const Categories = ({ roadmap }) => {
           </div>
         </div>
         <div className='grid  items-center justify-around  gap-10 lg:flex lg:gap-5  '>
-          {roadmap.map(({ id, title, icon, description }) => {
+          {roadmap.map(({ id, title, icon, description, roadmaplink }) => {
             return (
               <div
                 key={id}
                 className='flex w-full max-w-[380px] flex-col items-center justify-center gap-4 rounded-xl bg-purple p-3'
               >
-                <div className='text-gray rounded-full bg-text p-5 text-base font-bold text-black'>
-                  <Image
-                    src={icon}
-                    width={100}
-                    height={100}
-                    alt='hi'
-                    className='rounded-xl'
-                  />
-                </div>
-                <div className=' flex flex-col items-center gap-4 text-center'>
-                  <div className='text-lg font-bold transition duration-500 dark:text-white'>
-                    {title}
+                <Link
+                  href={`/roadmaps/${title}`}
+                  className='flex w-full max-w-[380px] flex-col items-center justify-center gap-4 rounded-xl bg-purple p-3'
+                >
+                  <div className='text-gray rounded-full bg-text p-5 text-base font-bold text-black'>
+                    <Image
+                      src={icon}
+                      width={100}
+                      height={100}
+                      alt='hi'
+                      className='rounded-xl'
+                    />
                   </div>
-                  <div className='transition duration-500 dark:text-white'>
-                    {description} {currentyear.getFullYear()}
+                  <div className=' flex flex-col items-center gap-4 text-center'>
+                    <div className='text-lg font-bold transition duration-500 dark:text-white'>
+                      {title}
+                    </div>
+                    <div className='transition duration-500 dark:text-white'>
+                      {description} {currentyear.getFullYear()}
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             )
           })}
