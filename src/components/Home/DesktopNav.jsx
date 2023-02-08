@@ -59,11 +59,18 @@ const DesktopNav = () => {
             <MenuItem component='a' href='/' onClick={handleClose}>
               Home
             </MenuItem>
-            <MenuItem component='a' href='/dashboard' onClick={handleClose}>
-              Dashboard
-            </MenuItem>
             <MenuItem component='a' href='/courses' onClick={handleClose}>
               Courses
+            </MenuItem>
+            <MenuItem
+              component='a'
+              href='/roadmaps/Frontend'
+              onClick={handleClose}
+            >
+              Roadmaps
+            </MenuItem>
+            <MenuItem component='a' href='/dashboard' onClick={handleClose}>
+              Dashboard
             </MenuItem>
             <MenuItem
               component='a'
@@ -100,6 +107,11 @@ const DesktopNav = () => {
           <Link legacyBehavior href='/courses/'>
             <a className='font-semibold text-text no-underline  decoration-yellow hover:underline hover:decoration-4'>
               Courses
+            </a>
+          </Link>
+          <Link legacyBehavior href='/roadmaps/Frontend'>
+            <a className='font-semibold text-text no-underline  decoration-yellow hover:underline hover:decoration-4'>
+              Roadmaps
             </a>
           </Link>
           <Link legacyBehavior href='/dashboard'>

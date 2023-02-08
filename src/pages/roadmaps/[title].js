@@ -5,6 +5,7 @@ import { Button } from '@mui/material'
 import { Stack } from '@mui/system'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const CoursesDetails = ({ roadmap, roadmaps }) => {
   const currentyear = new Date()
@@ -17,52 +18,53 @@ const CoursesDetails = ({ roadmap, roadmaps }) => {
         <link rel='icon' href='/logo.png' />
       </Head>
 
-      <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10'>
+      <main className='mx-auto flex max-w-[1440px] flex-col gap-24 bg-primary p-10 text-center'>
         <DesktopNav />
         <div className='flex flex-col gap-5'>
           {roadmap.map(({ id, title, description, roadmaplink }) => {
             return (
-              <>
-                <div key={id} className='text-text'>
-                  <div className='flex text-[38px] font-bold'>{title} :</div>
+              <div key={id} className='flex flex-col gap-5'>
+                <div className='text-text'>
+                  <div className='flex justify-center text-[38px] font-bold'>
+                    {title} Roadmap
+                  </div>
                   <div className='text-[lg font-thin'>
                     {description} {currentyear.getFullYear()}
                   </div>
                 </div>
-                <div className='flex flex-col gap-3 self-center lg:flex-row'>
-                  <div className='flex justify-center text-[38px] font-bold'></div>
-                  {roadmaps.map(({ id, title, icon }) => {
-                    return (
-                      <Stack key={id} direction='row'>
-                        <Button
-                          variant='outlined'
-                          className='flex gap-2 rounded-xl border-2 border-yellow px-5 py-2 font-semibold text-yellow'
-                        >
-                          <div className=''>
-                            <Image
-                              src={icon}
-                              width={30}
-                              height={30}
-                              alt='icon'
-                              className='rounded-xl'
-                            />
-                          </div>
-                          <div className=''>{title}</div>
-                        </Button>
-                      </Stack>
-                    )
-                  })}
+                <div className='flex flex-wrap gap-3 self-center lg:flex-row'>
+                  <div className='flex flex-wrap justify-center gap-2 text-[38px] font-bold'>
+                    {roadmaps.map(({ id, title, icon }) => {
+                      return (
+                        <div key={id} className=''>
+                          <Link href={`/roadmaps/${title}`}>
+                            <Stack direction='row'>
+                              <Button
+                                variant='outlined'
+                                className='flex gap-2 rounded-xl border-2 border-yellow px-5 py-2 font-semibold text-yellow'
+                              >
+                                <div className=''>
+                                  <Image
+                                    src={icon}
+                                    width={30}
+                                    height={30}
+                                    alt='icon'
+                                    className='rounded-xl'
+                                  />
+                                </div>
+                                <div className=''>{title}</div>
+                              </Button>
+                            </Stack>
+                          </Link>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
-                <div className='flex self-center'>
-                  {/* <Image
-                    src='/images/frontend.png'
-                    alt='header'
-                    width={1000}
-                    height={500}
-                  /> */}
-                  <iframe className='h-screen w-screen' src={roadmaplink} />
+                <div className='flex w-full self-center'>
+                  <iframe src={roadmaplink} className='h-screen w-[95%]' />
                 </div>
-              </>
+              </div>
             )
           })}
         </div>
