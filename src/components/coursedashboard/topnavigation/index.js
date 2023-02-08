@@ -35,7 +35,7 @@ export default function TopNavigation({ picture }) {
                 &#8801;
               </button>
             </div>
-            <div className='group relative flex h-full w-full items-center lg:w-96 xl:w-full'>
+            <div className='group relative flex h-full w-full items-center lg:w-96 xl:w-[90%]'>
               <div className='absolute flex h-10 w-auto cursor-pointer items-center justify-center p-3 pr-2 text-sm uppercase text-gray-500 sm:hidden'>
                 <svg
                   fill='none'
@@ -79,8 +79,21 @@ export default function TopNavigation({ picture }) {
               >
                 Home
               </Typography>
-              <Typography className='hidden lg:block' sx={{ minWidth: 100 }}>
-                All Courses
+              <Typography
+                component='a'
+                href='/courses'
+                className='hidden lg:block'
+                sx={{ minWidth: 100 }}
+              >
+                Courses
+              </Typography>
+              <Typography
+                component='a'
+                href='/courses'
+                className='hidden lg:block'
+                sx={{ minWidth: 100 }}
+              >
+                Roadmaps
               </Typography>
               <Tooltip title='Account settings'>
                 <IconButton
@@ -130,7 +143,7 @@ export default function TopNavigation({ picture }) {
               anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
               <MenuItem onClick={handleClose}>
-                <Avatar /> Profile
+                <Avatar src={picture} /> Profile
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Avatar /> My account
