@@ -2,13 +2,13 @@ import CourseCard from '@/components/Home/CourseCard'
 import DashboardLayout from '@/dashboard/layout'
 import DashboardProvider from '@/dashboard/provider/context'
 import { getCourses } from '@/utils/db'
-import Content from '../../components/content'
 
 export default function Page({ courses }) {
   return (
-    <div className='flex flex-col gap-5'>
-      <CourseCard name={'Featured '} courses={courses} />
-      <Content title='Google' />
+    <div className='flex h-full flex-col gap-5 self-center rounded-xl bg-primary pt-5'>
+      <div className='self-center'>
+        <CourseCard name={'Your '} courses={courses} />
+      </div>
     </div>
   )
 }

@@ -40,15 +40,6 @@ const CoursesDetails = ({
             alt='hi'
             className='rounded-xl'
           />
-          <div className='text-[38px] font-bold text-text'>Course Catalog</div>
-          <Stack direction='row'>
-            <Button
-              variant='outlined'
-              className='rounded-xl border-2 border-yellow px-5 py-2 font-semibold text-yellow'
-            >
-              Machine Learning
-            </Button>
-          </Stack>
         </div>
         <div className='flex flex-col justify-center gap-10 text-justify lg:flex-row lg:gap-24'>
           <div className='flex flex-col gap-10 '>
