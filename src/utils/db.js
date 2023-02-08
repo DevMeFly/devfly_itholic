@@ -8,15 +8,28 @@ const getRoadmaps = async () => {
     },
   })
   await prisma.$disconnect()
+  // console.log(roadmap)
+  return roadmap
+}
+
+const getRoadmap = async (title) => {
+  const roadmap = await prisma.roadmap.findMany({
+    where: {
+      title,
+    },
+    include: {
+      courses: true,
+    },
+  })
+  await prisma.$disconnect()
+  console.log(roadmap)
   return roadmap
 }
 
 const getCourses = async () => {
   const courses = await prisma.course.findMany({
     include: {
-      _count: {
-        select: { lessons: true },
-      },
+      lessons: true,
     },
   })
   await prisma.$disconnect()
@@ -66,14 +79,14 @@ const getUserByEmail = async (email) => {
   return user
 }
 
-const getLessons = async () => {
+const getLessons = async (id) => {
   const lessons = await prisma.lesson.findMany({
     where: {
-      courseId: 2,
+      courseId: id,
     },
   })
   await prisma.$disconnect()
-  console.log(lessons)
+  // console.log(lessons)
   return lessons
 }
 
@@ -156,4 +169,5 @@ export {
   subscribeUser,
   cancelSubscription,
   getRoadmaps,
+  getRoadmap,
 }

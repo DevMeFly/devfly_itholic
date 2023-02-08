@@ -13,7 +13,6 @@ const LessonPage = ({ lesson: { title, videoUrl }, user, lessons }) => {
         <div className='h-full'>
           <h2 className=' py-2 font-poppins text-xl font-extrabold text-primary'>
             {title}
-            {JSON.stringify(lessons)})
           </h2>
           {videoUrl ? (
             <div className='h-full w-full'>
@@ -46,12 +45,12 @@ const LessonPage = ({ lesson: { title, videoUrl }, user, lessons }) => {
   )
 }
 export const getServerSideProps = withPageAuthRequired({
-  async getServerSideProps({ req, res, params }) {
+  async getServerSideProps({ req, res, params, courseId }) {
     const { slug } = params
     const session = await getSession(req, res)
     const email = session?.user?.email
 
-    const lessons = await getLessons()
+    const lessons = await getLessons(courseId)
 
     const lesson = await prisma.lesson.findUnique({
       where: {
