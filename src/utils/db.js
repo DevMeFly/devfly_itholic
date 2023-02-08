@@ -22,7 +22,7 @@ const getRoadmap = async (title) => {
     },
   })
   await prisma.$disconnect()
-  console.log(roadmap)
+  // console.log(roadmap)
   return roadmap
 }
 

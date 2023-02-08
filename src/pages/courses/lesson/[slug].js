@@ -45,12 +45,10 @@ const LessonPage = ({ lesson: { title, videoUrl }, user, lessons }) => {
   )
 }
 export const getServerSideProps = withPageAuthRequired({
-  async getServerSideProps({ req, res, params, courseId }) {
+  async getServerSideProps({ req, res, params }) {
     const { slug } = params
     const session = await getSession(req, res)
     const email = session?.user?.email
-
-    const lessons = await getLessons(courseId)
 
     const lesson = await prisma.lesson.findUnique({
       where: {
@@ -83,7 +81,7 @@ export const getServerSideProps = withPageAuthRequired({
     if (!userAllowedCourse) {
       lesson.videoUrl = null
     }
-
+    const lessons = await getLessons(lesson.courseId)
     return {
       props: {
         lesson: JSON.parse(JSON.stringify(lesson)),
