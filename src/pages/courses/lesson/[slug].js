@@ -6,7 +6,11 @@ import Link from 'next/link'
 import Player from 'react-player/youtube'
 import prisma from '../../../../lib/prisma'
 
-const LessonPage = ({ lesson: { title, videoUrl }, user, lessons }) => {
+const LessonPage = ({
+  lesson: { title, videoUrl, price, course },
+  user,
+  lessons,
+}) => {
   return (
     <DashboardProvider>
       <CoursDashboardLayout lessons={lessons}>
@@ -25,12 +29,19 @@ const LessonPage = ({ lesson: { title, videoUrl }, user, lessons }) => {
             </div>
           ) : user ? (
             <>
-              <Link href='/pricing'>
-                <div className='rounded-md bg-green-200 py-2 px-4'>
-                  Subscribe
-                </div>
-              </Link>
-              <button className='ml-2 rounded-md border py-2 px-4'>
+              <div className='flex items-center gap-4'>
+                To view this course you need either a subscription
+                <Link href='/pricing'>
+                  <div className='w-fit rounded-md bg-green-200 py-2 px-4'>
+                    View Plans
+                  </div>
+                </Link>
+              </div>
+              Or buy it for
+              <span className='font-poppins font-bold text-primary'>
+                {' : ' + course.price} DH
+              </span>
+              <button className='ml-2 rounded-md border bg-primary py-2 px-4 text-text'>
                 Buy course
               </button>
             </>
