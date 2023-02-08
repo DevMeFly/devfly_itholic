@@ -12,7 +12,7 @@
   "files.encoding": "utf8",
   "cSpell.language": "en,lorem",
   "cSpell.enableFiletypes": ["dotenv", "log", "tailwindcss"],
-  "cSpell.words": ["allroadmaps", "commitlint", "tailwindcss"],
+  "cSpell.words": ["allroadmaps", "commitlint", "haspopup", "tailwindcss"],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
